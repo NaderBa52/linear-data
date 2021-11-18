@@ -1,0 +1,34 @@
+ALGORITHM sum
+VAR
+arr1,arr2 : ARRAY_OF INTEGER
+   i,j,m,n,sum1,sum2:INTEGER
+   sum1,sum2=0
+BEGIN
+    n:=arr1.length-1
+    m:=arr2.length-1
+    FOR i FROM 0 TO n STEP 1  DO
+        FOR j FROM 0 TO m STEP 1  DO
+            IF (arr1[i]=arr2[j]) THEN
+                sum2:=sum2+(arr1[i]*2)
+            break
+            END_IF 
+            IF (j=m) THEN
+                  sum1:=sum1+arr1[i]
+            END_IF
+        END_FOR
+       
+    END_FOR
+    FOR j FROM 0 TO m STEP 1  DO
+        FOR i FROM 0 TO n STEP 1  DO
+            IF (arr1[i]=arr2[j]) THEN
+                break
+            END_IF
+            IF (i=n) THEN
+                sum1:=sum1+arr2[j]
+            END_IF
+        END_FOR
+    END_FOR
+    Write ("the sum of different elements are",sum1,"the sum of equal element are",sum2)
+
+
+END
